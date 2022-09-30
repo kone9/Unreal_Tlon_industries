@@ -45,4 +45,19 @@ public:
 	void spawn_alien();
 
 
+
+private:
+	class AGame_handler_game_mode* game_mode{ nullptr };
+
+public:
+	FTimerHandle timer_handle_search_game_mode;
+
+	UFUNCTION()
+	void OnTimerOut_search_game_mode();
+
+
+
+
+
+
 };
