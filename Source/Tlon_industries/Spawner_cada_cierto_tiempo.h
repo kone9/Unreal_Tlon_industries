@@ -23,4 +23,26 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+
+public:
+	UPROPERTY(EditAnywhere,BlueprintReadWrite)
+	TSubclassOf<AActor> alien;
+
+	FTimerHandle timer_handle;
+	UPROPERTY(EditAnywhere)
+	float timer_to_end{ 1.0f };
+	UPROPERTY(EditAnywhere)
+	bool repeat_timer{ true };
+
+	UFUNCTION()
+	void OnTimerOut_spawn_alien();
+
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int cant_a_instanciar = 1;
+
+public:
+	void spawn_alien();
+
+
 };
