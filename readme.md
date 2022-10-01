@@ -1,4 +1,4 @@
-# Rama Desktop Android ABRIR con Unreal Engine 4.27
+# Rama Desktop y Android, ABRIR con Unreal Engine 4.27
 
 
 ![foto_1](foto_1.jpg)
