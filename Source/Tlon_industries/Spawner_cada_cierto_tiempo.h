@@ -56,6 +56,16 @@ public:
 	void OnTimerOut_search_game_mode();
 
 
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int minimum_x = 500;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int maximum_x = 500;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int minimum_y = 500;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int maximum_y = 500;
 
 
 

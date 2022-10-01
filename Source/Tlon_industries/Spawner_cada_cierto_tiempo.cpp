@@ -13,6 +13,13 @@
 
 #include "Public/Game_handler_game_mode.h"
 
+#include "Kismet/KismetMathLibrary.h"
+
+
+
+//////////////
+
+
 
 // Sets default values
 ASpawner_cada_cierto_tiempo::ASpawner_cada_cierto_tiempo()
@@ -57,8 +64,6 @@ void ASpawner_cada_cierto_tiempo::OnTimerOut_spawn_alien()
 
 	cant_a_instanciar = game_mode->cantidad_de_enemigos_a_instanciar_por_Seconds;
 
-	const int int_to_print = cant_a_instanciar;
-	if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::Printf(TEXT("int: %i"), int_to_print));
 
 	for (int i = 0; i < cant_a_instanciar; i++)//instancio segun cantidad que recibo desde UI
 	{
@@ -70,7 +75,7 @@ void ASpawner_cada_cierto_tiempo::OnTimerOut_spawn_alien()
 //intancia el alien
 void ASpawner_cada_cierto_tiempo::spawn_alien()
 {
-	if(GetWorld() == nullptr) return;
+	if (GetWorld() == nullptr) return;
 	// Don't forget to include World.h to use methods inside UWorld Class
 	FActorSpawnParameters spawn_params{};
 	spawn_params.Owner = nullptr; // Specify owner actor for this new actor if you need one.
@@ -79,7 +84,21 @@ void ASpawner_cada_cierto_tiempo::spawn_alien()
 
 	FTransform new_actor_transform = FTransform::Identity; // Identity Matrix if you need the default transformation.
 
-	new_actor_transform.SetLocation(GetActorLocation());
+	
+	//rango aleatorio para que no se pisen
+	float new_minimum_x = GetActorLocation().X + minimum_x;
+	float new_maximum_x = GetActorLocation().X - maximum_x;
+	float randon_value_x = UKismetMathLibrary::RandomFloatInRange(new_minimum_x, new_maximum_x);
+
+	float new_minimum_y = GetActorLocation().Y + minimum_y;
+	float new_maximum_y = GetActorLocation().Y - maximum_y;
+	float randon_value_y = UKismetMathLibrary::RandomFloatInRange(new_minimum_y, new_maximum_y);
+
+	new_actor_transform.SetLocation(FVector(
+		randon_value_x,
+		randon_value_y,
+		GetActorLocation().Z
+	));
 
 	// Spawn Actor return a Pointer to new Actor
 	GetWorld()->SpawnActor<AActor>(alien, new_actor_transform, spawn_params);
