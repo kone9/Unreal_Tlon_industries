@@ -58,14 +58,14 @@ public:
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int minimum_x = 500;
+	int minimum_x = 300;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int maximum_x = 500;
+	int maximum_x = 300;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int minimum_y = 500;
+	int minimum_y = 300;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int maximum_y = 500;
+	int maximum_y = 300;
 
 
 
