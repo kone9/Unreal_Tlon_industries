@@ -6,7 +6,7 @@
 
 
 ## Puedes descargar los ejecutables o jugar directo en el navegador desde aqui.
-
+https://kone9.itch.io/unreal-test-instance-with-ia-and-interface-manipulation
 
 Prueba unreal engine multiplataforma
 
@@ -31,4 +31,3 @@ La version OPENGL 3.1 DESKTOP tiene una mayor tasa de FPS pero menor calidad gr√
 
 Android con  OPENGL 3.1, dispositivos gama media, tambi√©n funciona en un emulador Android llamado LDPlayer. Tendria que funcionar los objetos de UI correctamente con los touch.
 
-https://kone9.itch.io/unreal-test-instance-with-ia-and-interface-manipulation
